@@ -1,0 +1,45 @@
+ComparisonToBoolean:
+    Enabled: true
+
+DebuggerStatement:
+    Enabled: true
+
+EmptyExpression:
+    Enabled: true
+
+HashDuplicatedKey:
+    Enabled: true
+
+LiteralInCondition:
+    Enabled: true
+
+LiteralInInterpolation:
+    Enabled: true
+
+PercentArrays:
+    Enabled: true
+    StringArrayUnwantedSymbols:
+
+RandZero:
+    Enabled: true
+
+ShadowedArgument:
+    Enabled: true
+
+ShadowedException:
+    Enabled: true
+
+ShadowingOuterLocalVar:
+    Enabled: true
+
+UnusedArgument:
+    Enabled: true
+    IgnoreDefs: false
+    IgnoreBlocks: true
+    IgnoreProcs: false
+
+UselessAssign:
+    Enabled: false
+
+UselessConditionInWhen:
+    Enabled: true
