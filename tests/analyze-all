@@ -1,0 +1,3 @@
+#!/bin/sh
+
+bin/ameba --config bin/.ameba.yml
