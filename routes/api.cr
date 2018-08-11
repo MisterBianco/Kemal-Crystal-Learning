@@ -1,4 +1,5 @@
 require "kemal"
+require "./queries"
 
 def authorized(env) : Bool
     if env.session.bool?("authenticated")
@@ -13,14 +14,18 @@ post "/api/login" do |env|
     username = env.params.body["username"]?
     password = env.params.body["password"]?
 
-    if username == "Jacobsin" && password == "password"
-        env.session.bool("authenticated", true)
-        "Success"
-
-    else
+    if username.nil? || password.nil?
         env.response.status_code = 401
         {"Message": "Failure"}.to_json
-
+    else
+        puts get_user?(username)
+        if username == "Jacobsin" && password == "password"
+            env.session.bool("authenticated", true)
+            "Success"
+        else
+            env.response.status_code = 401
+            {"Message": "Failure"}.to_json
+        end
     end
 end
 

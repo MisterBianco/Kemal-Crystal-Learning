@@ -2,3 +2,4 @@ bin/ameba
 lib/
 
 shard.lock
+database.sqlite3

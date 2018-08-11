@@ -17,4 +17,4 @@ before_install:
   - sudo apt-get install -y libyaml-dev
 
 script:
-    - ./test
+    - make test

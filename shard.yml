@@ -32,9 +32,21 @@ dependencies:
     poncho:
         github: icyleaf/poncho
 
+    request_id:
+        github: SuperPaintman/request-id
+
+    schedule:
+        github: hugoabonizio/schedule.cr
+
     redis:
         github: stefanwille/crystal-redis
         version: ~> 2.0.0
+
+    db:
+        github: crystal-lang/crystal-db
+
+    sqlite3:
+        github: crystal-lang/crystal-sqlite3
 
     awesome-logger:
         github: tbrand/awesome-logger
