@@ -20,8 +20,17 @@ dependencies:
     kemal:
         github: kemalcr/kemal
 
+    kemal-session:
+        github: kemalcr/kemal-session
+
     spec-kemal:
         github: kemalcr/spec-kemal
+
+    totem:
+        github: icyleaf/totem
+
+    poncho:
+        github: icyleaf/poncho
 
     redis:
         github: stefanwille/crystal-redis

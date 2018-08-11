@@ -2,19 +2,19 @@
 
 KEMAL_ENV=test crystal spec
 
-echo "\r\n----------------------"
-echo "Analyzing -> style"
-echo "----------------------"
+echo "\r\n+---------------------+"
+echo "|  Analyzing -> style |"
+echo "+---------------------+"
 ./tests/analyze-style
 
-echo "\r\n----------------------"
-echo "Analyzing -> syntax"
-echo "----------------------"
+echo "\r\n+----------------------+"
+echo "|  Analyzing -> syntax |"
+echo "+----------------------+"
 ./tests/analyze-syntax
 
-echo "\r\n----------------------"
-echo "Analyzing -> all"
-echo "----------------------"
+echo "\r\n+--------------------+"
+echo "|  Analyzing -> all  |"
+echo "+--------------------+"
 ./tests/analyze-all
 
 echo "+--------------------+"

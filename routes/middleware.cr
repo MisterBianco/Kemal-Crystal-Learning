@@ -1,5 +1,5 @@
 require "kemal"
 
-before_get "/" do |env|
-  # puts "request to /"
+before_get "/api/protected" do |env|
+    #
 end

@@ -6,19 +6,228 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Serv | <%= title %></title>
+    <title>JMedia | <%= title %></title>
 
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bulma.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
 </head>
 <body>
 
-    <h1>Homepage</h1>
-    <div class="container">Hello grr</div>
+    <section class="hero is-fullheight has-background-black">
+        <div class="hero-body">
+            <div class="container">
+                    <article class="media">
+                        <figure class="media-left image is-64x64">
+                            <img src="images/crystal.svg">
+                        </figure>
+                        <div class="media-content">
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="content">
+                                        <h1 class="title" style="color: white">
+                                            <strong style="color: red">
+                                                JMedia
+                                            </strong> - Home Network Media Server
+                                        </h1>
+                                        <p class="subtitle" style="color: white">
+                                            Using
+                                            <strong style="color: red">
+                                                Crystal
+                                            </strong>!
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div id="tv" class="notification has-background-red">
+                                        Version: 0.0.1
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <article class="media notification is-info">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-2x fa-address-book"></i>
+                            </span>
+                        </figure>
+                    <div class="media-content">
+                        <h1 class="title is-size-4">Accounts</h1><hr>
+                        JM will support multiple user accounts, meaning
+                        no hard coded user accounts an awesome admin page
+                        for visualizing and controlling the program through
+                        a visually pleasing UI.
+                    </div>
+                </div>
+                <div class="column">
+                    <article class="media notification is-primary">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-2x fa-bolt"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <h1 class="title is-size-4">Speed</h1><hr>
+                            Built using crystal lang and the kemal framework this
+                            media server is designed to be speedy and user friendly
+                            the setup will be quick and painless and will save you
+                            from too much configuration hell.
+                        </div>
+                </div>
+                <div class="column">
+                    <article class="media notification is-warning">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-2x fa-lock"></i>
+                            </span>
+                        </figure>
+                    <div class="media-content">
+                        <h1 class="title is-size-4">Security</h1><hr>
+                        The security is all up to you by defining the secret key
+                        in the .env file. Also some security options will be
+                        added as later versions come out. Make sure to keep up
+                        with and watch out for the updates and security patches.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Note from author -->
+    <section class="section">
+        <div class="container">
+            <div class="content">
+                <h1 class="title">
+                    Version 0.0.1 - Alpha
+                </h1>
+                <hr>
+                <div class="content-body">
+                    This project is very much in alpha and won't hit a beta
+                    build until after the database connections and migrations
+                    are completed for the time being the login mechanism is
+                    static.<br><br>
+
+                    The reason for this project is multi faceted, on the one
+                    hand I wanted to learn Crystal however, I needed to do it in
+                    a way that made me interested and having a need for a webserver
+                    I could run on a raspberry pi efficiently was the main inspiration
+                    for this project.<br><br>
+
+                    I plan to have a stable release by December 25th, 2018. With
+                    the current trajectory this is very feasible. When this project
+                    gets to that place I will start taking bugs and feauture
+                    requests until then its too alpha for me to really accept any
+                    feedback.
+                </div>
+            </div>
+
+            <div class="content">
+                <h1 class="title">
+                    Installation
+                </h1>
+                <hr>
+                <div class="content-body">
+                    First you must install the crystal lang:
+                    <div class="notification">
+                        curl -sSL https://dist.crystal-lang.org/apt/setup.sh | sudo bash
+                    </div>
+
+                    One of the libraries used by the project requires an external dependency so run:
+                    <div class="notification">
+                        sudo apt-get install libyaml-dev libreadline-dev libgmp-dev libxml2-dev libssl-dev -y
+
+                    </div>
+
+                    Then clone the project and cd into the new folder:
+                    <div class="notification">
+                        git clone https://github.com/MisterBianco/Kemal-Crystal-Learning && cd Kemal-Crystal-Learning
+                    </div>
+
+                    Finish the installation by using crystals dependency manager to install the requirements:
+                    <div class="notification">
+                        shards install
+                    </div>
+
+                    Then you are ready to go...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer section has-background-grey-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h3 class="title is-size-5">Resources</h3>
+                    <a class="resource" href="#">Docs</a>
+                    <a class="resource" href="#">Videos</a>
+                    <a class="resource" href="#">Getting Started</a>
+                </div>
+                <div class="column">
+                </div>
+                <div class="column">
+                    <div class="title is-size-5">Jarad Dingman</div>
+                    <article class="media">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-user-ninja"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            Security Researcher
+                        </div>
+                    </article>
+
+                    <article class="media">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="far fa-comment-alt"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            Contact: jayrad1996@gmail.com
+                        </div>
+                    </article>
+
+                    <article class="media">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="fab fa-github"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <a href="https://github.com/MisterBianco">Github</a>
+                        </div>
+                    </article>
+
+                    <article class="media">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="fab fa-linkedin"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <a href="https://www.linkedin.com/in/jarad-dingman-51a396112">LinkedIn</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/jq.js"></script>
+    <script src="js/main.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 
 </body>
 </html>
