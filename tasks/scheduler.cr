@@ -1,14 +1,33 @@
 require "schedule"
+require "../database/queries"
 
-# Use this to run tests or to run constant environment tests
-MAX_COUNT = 5
-RETRIES = 0
-
+# +============================================================================
+# |   This module is used to run scheduled tasks on an interval
+# |   +---> You can create new runner instances
+# |   +---> Runner instances act like cron and run in their own "fiber"
 runner = Schedule::Runner.new
-runner.every(5.seconds) do
-    puts "Ran Test"
-    result = 1
 
-    Schedule.retry if result == -1
-    Schedule.stop if result == 2 >= MAX_COUNT
+# +============================================================================
+# |    This runner instance is best as a unit in for docker instances
+# |    +---> It is useful for displaying all the information in a system live.
+# |    +---> If it isn't needed it would be best to remove it from the system.
+runner.every(100.seconds) do
+    puts "+=============================================+"
+    puts "| Runner -> get objects                       |"
+    puts "+=============================================+"
+    get_posts(0).each do |post|
+        puts "| #{post.username}: #{post.title} | #{post.body}"
+    end
+    puts "+=============================================+"
+    get_subscribers.each do |subv|
+        puts "| #{subv.email}"
+    end
+    puts "+=============================================+"
+end
+
+# +============================================================================
+# |    This runner instance is just a sample
+# |    +--->  It should be adapted for other uses.
+runner.every(1000.seconds) do
+    puts "Hello world"
 end

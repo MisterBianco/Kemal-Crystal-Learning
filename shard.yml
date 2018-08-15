@@ -23,6 +23,9 @@ dependencies:
     kemal-session:
         github: kemalcr/kemal-session
 
+    kemal-csrf:
+        github: kemalcr/kemal-csrf
+
     spec-kemal:
         github: kemalcr/spec-kemal
 
@@ -38,9 +41,15 @@ dependencies:
     schedule:
         github: hugoabonizio/schedule.cr
 
+    faker:
+        github: askn/faker
+
     redis:
         github: stefanwille/crystal-redis
         version: ~> 2.0.0
+
+    progress:
+        github: askn/progress
 
     db:
         github: crystal-lang/crystal-db
@@ -50,3 +59,8 @@ dependencies:
 
     awesome-logger:
         github: tbrand/awesome-logger
+
+
+    # ME, MYSELF, AND I
+    argot:
+        github: MisterBianco/argot

@@ -1,0 +1,107 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/landing.css">
+</head>
+
+<body>
+<section class="hero">
+    <div class="hero-head has-background-black">
+        <%= ecr "_nav" %>
+        </div>
+
+        <div class="hero-body">
+            <div class="container">
+                <div class="column">
+
+                    <aside class="menu">
+                        <p class="menu-label">
+                            <b><i class="fas fa-align-justify"></i> Menu</b>
+                        </p>
+                        <ul class="menu-list" style="display: none">
+                            <% posts.each do |msg| %>
+                                <li><a href="#<%= msg.id %>"><%= msg.title %></a></li>
+                            <% end %>
+                        </ul>
+                    </aside>
+
+                    <% posts.each do |msg| %>
+                        <div id="<%= msg.id %>" class="card" style="margin-bottom:15px">
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-64x64">
+                                            <img src="/images/avatar.png" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4"><%= msg.title %></p>
+                                        <p class="subtitle is-6">@<%= msg.username %></p>
+                                    </div>
+                                </div>
+
+                                <div class="content">
+                                    <%= msg.body %>
+                                    <br>
+                                    <a class="tag" href="/posts/<%= msg.id %>">[ Read More ]</a>
+
+                                    <div class="has-text-right">
+                                        <time datetime="YYYY-MM-DD HH:MM"><%= msg.timestamp[0..15] %></time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+
+                    <nav class="pagination" role="navigation" aria-label="pagination">
+                        <% if page > 1 %>
+                            <a href="/blog/<%= page-1 %>" class="pagination-previous is-rounded">Previous</a>
+                        <% else %>
+                            <a class="pagination-previous is-rounded" disabled>Previous</a>
+                        <% end %>
+
+                        <% if page == last_page %>
+                            <a class="pagination-next is-rounded" disabled>Next page</a>
+                        <% else %>
+                            <a href="/blog/<%= page+1%>" class="pagination-next is-rounded">Next page</a>
+                        <% end %>
+
+                            <ul class="pagination-list">
+                                <% if page != 1 %>
+                                    <li>
+                                        <a href="/blog/1" class="pagination-link" aria-label="Goto page 1">1</a>
+                                    </li>
+                                    <li>
+                                      <span class="pagination-ellipsis">&hellip;</span>
+                                    </li>
+                                <% end %>
+
+                                <% if page > 1 %>
+                                    <li>
+                                      <a href="/blog/<%= page-1 %>" class="pagination-link" aria-label="Goto page 45"><%= page-1 %></a>
+                                    </li>
+                                <% end %>
+                                <li>
+                                  <a class="pagination-link is-current" aria-current="page"><%= page %></a>
+                                </li>
+                                <% if page+1 <= last_page %>
+                                    <li>
+                                      <a href="/blog/<%= page+1 %>" class="pagination-link" aria-label="Goto page next page"><%= page+1 %></a>
+                                    </li>
+                                    <li>
+                                      <span class="pagination-ellipsis">&hellip;</span>
+                                    </li>
+                                    <li>
+                                      <a href="/blog/<%= last_page %>" class="pagination-link" aria-label="Goto page 86"><%= last_page %></a>
+                                    </li>
+                                <% end %>
+
+                            </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+</section>
+
+<script type="text/javascript" src="/js/jq.js"></script>
+<script type="text/javascript" src="/js/landing.js"></script>

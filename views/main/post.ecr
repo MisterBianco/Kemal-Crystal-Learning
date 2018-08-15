@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/landing.css">
+</head>
+
+<body>
+<section class="hero">
+    <div class="hero-head has-background-primary">
+        <%= ecr "_nav" %>
+        </div>
+
+        <div class="hero-body">
+            <div class="container">
+                <div class="column">
+
+                    <div  class="card" style="margin-bottom:15px">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <img src="/images/avatar.png" alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4"><%= post[0].title %></p>
+                                    <p class="subtitle is-6">@<%= post[0].username %></p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <%= post[0].body %>
+                                <br>
+                                <div class="has-text-right">
+                                    <time datetime="YYYY-MM-DD HH:MM"><%= post[0].timestamp[0..15] %></time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</section>
+
+<script type="text/javascript" src="/js/jq.js"></script>
+<script type="text/javascript" src="/js/landing.js"></script>

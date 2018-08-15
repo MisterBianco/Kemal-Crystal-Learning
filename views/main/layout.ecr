@@ -8,17 +8,15 @@
 
     <title>JMedia | <%= title %></title>
 
-    <link href="css/bulma.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="/css/bulma.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 
-</head>
-<body>
+<%= content %>
 
-<%= content %> 
+<input type="hidden" name="_csrf" value="<%= env.session.string("csrf") %>">
 
-<script src="js/jq.js"></script>
-<script src="js/main.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+<script src="/js/main.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
 </body>
 </html>

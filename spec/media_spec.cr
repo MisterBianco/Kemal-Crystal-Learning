@@ -58,6 +58,10 @@ describe "Bad Login Tests" do
         response.status_code.should eq (401)
     end
 
+end
+
+describe "Good Login Tests" do
+
     it "Good Login" do
 
         post("/api/login",
@@ -69,12 +73,18 @@ describe "Bad Login Tests" do
         response.status_code.should eq (200)
     end
 
-    # it "Saves State" do
-    #
-    #     post("/api/login",headers: HTTP::Headers{"Content-Type" => "application/x-www-form-urlencoded"},body: "username=Jacobsin&password=password")
-    #     puts "#{response.headers["Set-Cookie"]}"
-    #     # get "/api/protected"
-    #
-    #     response.status_code.should eq (200)
-    # end
+end
+
+describe "api Tests" do
+
+    it "api posts" do
+        get("/api/posts")
+        response.status_code.should eq (200)
+    end
+
+    it "api subscribers" do
+        get("/api/subscribers")
+        response.status_code.should eq (200)
+    end
+
 end
