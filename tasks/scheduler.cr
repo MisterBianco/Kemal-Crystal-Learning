@@ -15,13 +15,16 @@ runner.every(100.seconds) do
     puts "+=============================================+"
     puts "| Runner -> get objects                       |"
     puts "+=============================================+"
+
     get_posts(0).each do |post|
-        puts "| #{post.username}: #{post.title} | #{post.body}"
+        puts "| #{post.username}: #{post.title} | #{post.body[1..50]}"
     end
+
     puts "+=============================================+"
     get_subscribers.each do |subv|
         puts "| #{subv.email}"
     end
+
     puts "+=============================================+"
 end
 

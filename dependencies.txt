@@ -1,2 +1,3 @@
 libyaml-0-2
 libyaml-dev
+libsqlite3-dev

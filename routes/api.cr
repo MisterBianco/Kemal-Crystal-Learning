@@ -6,6 +6,18 @@ def authorized(env) : Bool
     false
 end
 
+# get "/api/posts/:page" do |env|
+#     env.response.content_type = "application/json"
+#     page = env.params.url["page"].to_i(10, true, false, false, false)
+#     if !page.nil?
+#         result = get_posts(page)
+#         result.to_json
+#     else
+#         env.response.status_code = 404
+#         "Bad Page Request"
+#     end
+# end
+
 get "/api/posts" do |env|
     env.response.content_type = "application/json"
     result = get_posts(0)
@@ -20,7 +32,7 @@ end
 
 post "/api/email" do |env|
     email = env.params.body["email"]?
-    
+
     if email.nil?
         env.response.status_code = 401
         "Failure"

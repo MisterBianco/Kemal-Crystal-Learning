@@ -23,9 +23,6 @@ dependencies:
     kemal-session:
         github: kemalcr/kemal-session
 
-    kemal-csrf:
-        github: kemalcr/kemal-csrf
-
     spec-kemal:
         github: kemalcr/spec-kemal
 
@@ -59,8 +56,3 @@ dependencies:
 
     awesome-logger:
         github: tbrand/awesome-logger
-
-
-    # ME, MYSELF, AND I
-    argot:
-        github: MisterBianco/argot

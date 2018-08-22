@@ -1,0 +1,6 @@
+build:
+    language: 
+        - crystal
+
+run:
+    crystal run src/serv.cr --release
