@@ -1,6 +1,6 @@
 build:
-    language: 
+    language:
         - crystal
 
 run:
-    crystal run src/serv.cr --release
+    crystal run src/serv.cr --release -- -p $PORT
