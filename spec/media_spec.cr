@@ -77,14 +77,14 @@ end
 
 describe "api Tests" do
 
-    it "api posts" do
-        get("/api/posts")
-        response.status_code.should eq (200)
-    end
-
-    it "api subscribers" do
-        get("/api/subscribers")
-        response.status_code.should eq (200)
-    end
+    # it "api posts" do
+    #     get("/api/posts")
+    #     response.status_code.should eq (200)
+    # end
+    #
+    # it "api subscribers" do
+    #     get("/api/subscribers")
+    #     response.status_code.should eq (200)
+    # end
 
 end
